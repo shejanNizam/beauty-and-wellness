@@ -7,7 +7,7 @@ import { routeLinkGenerators } from "../utils/routeLinkGenerators";
 export default function Sidebar() {
   return (
     <>
-      <div className="fixed top-0 left-0 w-[326px] min-h-screen flex flex-col justify-between bg-white py-[50px]">
+      <div className="fixed top-0 left-0 w-[326px] min-h-screen flex flex-col justify-between bg-white py-[50px] shadow-xl">
         <div className="space-y[24px">
           <div className="px-[38px]">
             {/* <img className="w-[200px] mx-auto" src={logo} alt="" /> */}
@@ -22,14 +22,13 @@ export default function Sidebar() {
                     className={({ isActive }) =>
                       isActive
                         ? "bg-primary text-white" +
-                          " w-full px-10 py-4 flex items-center justify-start gap-5 text-lg transition-all rounded-sm"
+                          " w-full px-10 py-4 flex items-center justify-start gap-5 text-lg transition-all rounded-lg"
                         : "text-black hover:text-white text-[20px] hover:bg-primary" +
-                          " w-full px-10 py-4 flex items-center justify-start gap-5 text-lg transition-all rounded-sm"
+                          " w-full px-10 py-4 flex items-center justify-start gap-5 text-lg transition-all rounded-lg"
                     }
                   >
-                    <div>{createElement(icon, { size: "20" })}</div>
-
-                    <span> {name}</span>
+                    <div>{createElement(icon, { size: "30" })}</div>
+                    <span className="text-2xl"> {name}</span>
                   </NavLink>
                 </li>
               )
@@ -39,10 +38,13 @@ export default function Sidebar() {
         <div className="p-[24px]">
           <button
             // onClick={handleLogOut}
-            className="bg-[#E8EAEF] text-black w-full px-10 py-4 flex items-center justify-start gap-6 text-lg outline-none rounded-sm border border-white"
+            className="bg-[#E8EAEF] hover:bg-red-500 text-black hover:text-white w-full px-10 py-4 flex items-center justify-start gap-6 text-lg outline-none rounded-lg border border-white"
           >
-            <IoIosLogOut size={20} />
-            <span>Log Out</span>
+            <IoIosLogOut
+              className="text-red-600 hover:text-red-900"
+              size={20}
+            />
+            <span>Logout</span>
           </button>
         </div>
       </div>
