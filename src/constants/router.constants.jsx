@@ -1,4 +1,5 @@
 import { BiCategoryAlt } from "react-icons/bi";
+import { FaUsersViewfinder } from "react-icons/fa6";
 import { GrMoney } from "react-icons/gr";
 import { HiOutlineSupport } from "react-icons/hi";
 import { IoIosPeople } from "react-icons/io";
@@ -9,9 +10,9 @@ import Category from "../pages/Main/Category/Category";
 import Client from "../pages/Main/Client/Client";
 import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
 import Earnings from "../pages/Main/Earnings/Earnings";
+import Notifications from "../pages/Main/Notifications/Notifications";
 import Support from "../pages/Main/Support/Support";
 import Settings from "../pages/Settings/Settings";
-import { FaUsersViewfinder } from "react-icons/fa6";
 
 export const dashboardItems = [
   {
@@ -55,5 +56,9 @@ export const dashboardItems = [
     path: "/settings",
     icon: IoSettingsOutline,
     element: <Settings />,
+  },
+  {
+    path: "/notifications",
+    element: <Notifications />,
   },
 ];

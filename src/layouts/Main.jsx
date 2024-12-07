@@ -9,11 +9,11 @@ export default function Main() {
         <div className="">
           <Sidebar />
         </div>
-        <div className="flex-1 pl-[326px]">
-          <div className="sticky top-0 w-full p-[24px] z-10 bg-[#FFFFFF]">
+        <div className="flex-1 pl-80">
+          <div className="sticky top-0 w-full p-6 z-10 ">
             <Header />
           </div>
-          <div className="p-[24px] pt-2">
+          <div className="p-6 pt-2">
             <Outlet />
           </div>
         </div>
