@@ -1,17 +1,17 @@
 import { createElement } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
-import { dashboardItems } from "../constants/router.constants";
-import { routeLinkGenerators } from "../utils/routeLinkGenerators";
+import { dashboardItems } from "../../constants/router.constants";
+import { routeLinkGenerators } from "../../utils/routeLinkGenerators";
+import logo from "../../assets/logo.png";
 
 export default function Sidebar() {
   return (
     <>
-      <div className="fixed top-0 left-0 w-[300px] min-h-screen flex flex-col justify-between bg-white py-[50px] shadow-xl">
+      <div className="fixed top-0 left-0 w-[300px] h-[883px] min-h-screen flex flex-col justify-between bg-white py-[50px] shadow-xl">
         <div className="space-y[24px">
           <div className="px-[38px]">
-            {/* <img className="w-[200px] mx-auto" src={logo} alt="" /> */}
-            <p> ARMONIA LOGO </p>
+            <img className="w-[152px] h-[187px] mx-auto" src={logo} alt="" />
           </div>
           <ul className="mt-[24px] max-h-[650px] overflow-y-auto space-y-1 xl:space-y-2 px-6">
             {routeLinkGenerators(dashboardItems).map(
