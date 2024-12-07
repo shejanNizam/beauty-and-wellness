@@ -1,5 +1,5 @@
 import { createElement } from "react";
-import { IoIosLogOut } from "react-icons/io";
+import { BiLogOut } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { dashboardItems } from "../constants/router.constants";
 import { routeLinkGenerators } from "../utils/routeLinkGenerators";
@@ -7,7 +7,7 @@ import { routeLinkGenerators } from "../utils/routeLinkGenerators";
 export default function Sidebar() {
   return (
     <>
-      <div className="fixed top-0 left-0 w-[326px] min-h-screen flex flex-col justify-between bg-white py-[50px] shadow-xl">
+      <div className="fixed top-0 left-0 w-[300px] min-h-screen flex flex-col justify-between bg-white py-[50px] shadow-xl">
         <div className="space-y[24px">
           <div className="px-[38px]">
             {/* <img className="w-[200px] mx-auto" src={logo} alt="" /> */}
@@ -40,10 +40,7 @@ export default function Sidebar() {
             // onClick={handleLogOut}
             className="bg-[#E8EAEF] hover:bg-red-500 text-black hover:text-white w-full px-10 py-4 flex items-center justify-start gap-6 text-lg outline-none rounded-lg border border-white"
           >
-            <IoIosLogOut
-              className="text-red-600 hover:text-red-900"
-              size={20}
-            />
+            <BiLogOut className="text-red-600 hover:text-red-900" size={20} />
             <span>Logout</span>
           </button>
         </div>

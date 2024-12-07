@@ -22,22 +22,22 @@ export default function DashboardHome() {
           }
           className={"h-[12.02vh]"}
         >
-          <div className="grid grid-cols-3 gap-x-[22px]">
-            <div className="flex justify-center items-center gap-4 bg-white w-[470px] h-[206px] rounded-sm">
+          <div className="grid grid-cols-3 gap-12">
+            <div className="flex justify-center items-center gap-4 bg-white h-[206px] rounded-lg drop-shadow-xl ">
               <FaUserTie className={`text-primary w-[70px] h-[70px]`} />
               <div className="w-[172px] h-[81px]">
                 <p className="text-primary text-[24px] ">Total Customer</p>
                 <p className="text-[32px] font-semibold">{"780"}</p>
               </div>
             </div>
-            <div className="flex justify-center items-center gap-4 bg-white w-[470px] h-[206px] rounded-sm">
+            <div className="flex justify-center items-center gap-4 bg-white h-[206px] rounded-lg drop-shadow-xl  ">
               <FaUsersViewfinder className={`text-primary w-[70px] h-[70px]`} />
               <div className="w-[172px] h-[81px]">
                 <p className="text-primary text-[24px] ">Total beautician</p>
                 <p className="text-[32px] font-semibold">{"124"}</p>
               </div>
             </div>
-            <div className="flex justify-center items-center gap-4 bg-white w-[470px] h-[206px] rounded-sm">
+            <div className="flex justify-center items-center gap-4 bg-white h-[206px] rounded-lg drop-shadow-xl  ">
               <LiaHandsHelpingSolid
                 className={`text-primary w-[70px] h-[70px]`}
               />
