@@ -10,7 +10,7 @@ export default function Main() {
           <Sidebar />
         </div>
         <div className="flex-1 pl-80">
-          <div className="sticky top-0 w-full p-6 z-10 ">
+          <div className="sticky top-0 w-full p-6 z-10">
             <Header />
           </div>
           <div className="p-6 pt-2">
