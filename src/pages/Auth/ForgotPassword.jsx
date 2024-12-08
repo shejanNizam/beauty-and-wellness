@@ -1,7 +1,7 @@
 import { Button, Input } from "antd";
 import Form from "antd/es/form/Form";
 import { useNavigate } from "react-router-dom";
-import image from "../../assets/forgot-password-logo.png";
+import image from "../../assets/forgot.png";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ export default function ForgotPassword() {
                     },
                     {
                       required: true,
-                      message: "Please input your Email!",
+                      message: "Email is Required",
                     },
                   ]}
                 >

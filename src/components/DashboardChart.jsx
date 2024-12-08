@@ -20,27 +20,13 @@ const data = [
 ];
 
 const DashboardChart = () => {
-  //   const [cartYear, setCartYear] = useState(new Date().getFullYear());
-  //   const { data, isLoading, isError } = useGetChartDataQuery([
-  //     { name: "year", value: cartYear },
-  //   ]);
-  //   const onChange = (_date, dateString) => {
-  //     setCartYear(dateString);
-  //   };
-
   return (
-    <div className="bg-white rounded-lg px-[24px] py-[15px] text-white drop-shadow-lg">
+    <div className="bg-white rounded-lg px-[24px] py-[15px] text-white drop-shadow-lg h-[560px]">
       <div className="flex justify-between items-center">
         <h4 className="text-[20px] text-primary font-medium">Earnings</h4>
-        <DatePicker
-          // onChange={onChange}
-          picker="year"
-        />
+        <DatePicker picker="year" />
       </div>
-      <LoaderWraperComp
-      //   isLoading={isLoading}
-      //   isError={isError}
-      >
+      <LoaderWraperComp>
         <BarChart
           width={1450}
           height={500}
@@ -63,8 +49,8 @@ const DashboardChart = () => {
           <Bar
             dataKey="totalAmount"
             fill="#142F62"
-            barSize={30} // Adjust the width of the bars
-            radius={[0, 0, 0, 0]} // Optional: rounded corners for bars
+            barSize={30}
+            radius={[0, 0, 0, 0]}
           />
         </BarChart>
       </LoaderWraperComp>
