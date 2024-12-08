@@ -1,5 +1,4 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-
 import NotFound from "../components/NotFound";
 import { dashboardItems } from "../constants/router.constants";
 import Auth from "../layouts/Auth/Auth";

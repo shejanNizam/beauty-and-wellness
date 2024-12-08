@@ -1,7 +1,7 @@
 import { Button, Input } from "antd";
 import Form from "antd/es/form/Form";
 import { useNavigate } from "react-router-dom";
-import image from "../../assets/images/forgot.png";
+import image from "../../assets/images/forgot-password.png";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ export default function ForgotPassword() {
       <div className="bg-white">
         <div className="min-h-screen flex justify-evenly items-center">
           <div className="flex justify-center items-center ">
-            <img src={image} alt="logo" />
+            <img src={image} alt="forgot_image" />
           </div>
           <hr className="w-[1px] h-[700px] bg-[#B6BFCE] border-none justify-center" />
           <div className="">
@@ -31,7 +31,6 @@ export default function ForgotPassword() {
                 initialValues={{
                   remember: false,
                 }}
-                //   onFinish={onFinish}
                 className="text-start"
               >
                 <Form.Item

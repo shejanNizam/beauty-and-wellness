@@ -1,15 +1,13 @@
 import { Button, Input } from "antd";
 import Form from "antd/es/form/Form";
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import image from "../../assets/images/forgot.png";
+import image from "../../assets/images/reset-password.png";
 import PageHeading from "../../components/PageHeading";
 
 export default function ResetPassword() {
-  const navigation = useNavigate();
   return (
     <>
-      <div className="min-h-screen w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8">
+      <div className="min-h-screen w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8 bg-white">
         <div className="lg:border-l border-gray-violet mx-auto w-[96%] p-[5%] ">
           <img src={image} alt="" />
         </div>
@@ -24,7 +22,6 @@ export default function ResetPassword() {
               initialValues={{
                 remember: true,
               }}
-              // onFinish={onFinish}
             >
               <Form.Item
                 className=""
@@ -65,9 +62,6 @@ export default function ResetPassword() {
               <div className="w-full flex justify-center pt-2 ">
                 <Form.Item>
                   <Button
-                    // disabled={isLoading}
-                    // loading={isLoading}
-
                     size="large"
                     htmlType="submit"
                     className="w-[253px] lg:w-[353px] px-2 bg-primary text-white "

@@ -1,15 +1,15 @@
 import { Button, Checkbox, Input } from "antd";
 import Form from "antd/es/form/Form";
 import { useNavigate } from "react-router-dom";
-import image from "../../assets/images/sign-in.png";
+import LOGO from "../../assets/logo/logo.png";
 
 export default function SignIn() {
   const navigate = useNavigate();
   return (
-    <div className="bg-white">
-      <div className="min-h-screen flex justify-evenly items-center">
+    <>
+      <div className="min-h-screen flex justify-evenly items-center bg-white">
         <div className="flex justify-center items-center ">
-          <img src={image} alt="logo" />
+          <img src={LOGO} alt="logo" />
         </div>
         <hr className="w-[1px] h-[700px] bg-[#B6BFCE] border-none justify-center" />
         <div className="">
@@ -29,7 +29,6 @@ export default function SignIn() {
               initialValues={{
                 remember: false,
               }}
-              //   onFinish={onFinish}
               className="text-start"
             >
               <Form.Item
@@ -61,7 +60,7 @@ export default function SignIn() {
               </Form.Item>
               <div className="flex justify-between items-center">
                 <Form.Item name="remember" valuePropName="checked">
-                  <Checkbox className="text-base font-medium text-gray-violet">
+                  <Checkbox className="text-primary font-medium">
                     Remember me
                   </Checkbox>
                 </Form.Item>
@@ -78,9 +77,6 @@ export default function SignIn() {
               <div className="w-full flex justify-center ">
                 <Form.Item>
                   <Button
-                    // disabled={isLoading}
-                    // loading={isLoading}
-                    // type="primary"
                     size="large"
                     htmlType="submit"
                     className="w-[273px] lg:w-[353px] bg-primary text-white "
@@ -93,6 +89,6 @@ export default function SignIn() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
