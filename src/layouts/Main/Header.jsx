@@ -1,7 +1,7 @@
 import { Badge } from "antd";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import USER_IMG from "../../assets/premium_photo-1683121366070-5ceb7e007a97.jpg";
+import USER_IMG from "../../assets/images/dashboard-profile.png";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -20,13 +20,7 @@ export default function Header() {
             onClick={() => navigate("/notifications")}
             className="relative flex items-center "
           >
-            <Badge
-              // style={{ backgroundColor: "#26363F" }}
-              // count={data?.data?.totalUnreadNotification || 0}
-              count={2}
-              showZero={true}
-              offset={[-5, 5]}
-            >
+            <Badge count={2} showZero={true} offset={[-5, 5]}>
               <IoIosNotificationsOutline
                 style={{ cursor: "pointer" }}
                 className={`text-[#E8BD56] hover:text-[#E8BD56] bg-[#f8f5f5] w-12 h-12 rounded-full p-2 shadow-sm transition-all`}
@@ -40,11 +34,6 @@ export default function Header() {
           >
             <div>
               <img
-                // src={
-                //   user?.image
-                //     ? import.meta.env.VITE_SERVER_URL + user?.image
-                //     : profileImage
-                // }
                 src={USER_IMG}
                 className="rounded-full h-12 w-12 border-[#CCAD72]"
               />
@@ -52,7 +41,7 @@ export default function Header() {
             <div className="space-y-0.5 text-right">
               <h5 className="text-xl font-medium text-white">
                 {/* {user?.name} */}
-                {"Shejan"}
+                {"Admin"}
               </h5>
               <p className="text-[12px] text-[#CCAD72]">{"Admin"}</p>
             </div>

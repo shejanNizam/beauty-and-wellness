@@ -2,8 +2,8 @@ import { Button, Input } from "antd";
 import Form from "antd/es/form/Form";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import image from "../../assets/forgot.png";
-import PageHeading from "../../Components/PageHeading";
+import image from "../../assets/images/forgot.png";
+import PageHeading from "../../components/PageHeading";
 
 export default function ResetPassword() {
   const navigation = useNavigate();

@@ -1,6 +1,5 @@
 import { DatePicker } from "antd";
 import { CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
-// import { useGetChartDataQuery } from "../redux/features/transaction/transactionApi";
 import { Bar, BarChart, Legend } from "recharts";
 import LoaderWraperComp from "./LoaderWraperComp";
 

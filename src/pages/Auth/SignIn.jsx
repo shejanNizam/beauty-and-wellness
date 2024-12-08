@@ -1,7 +1,7 @@
 import { Button, Checkbox, Input } from "antd";
 import Form from "antd/es/form/Form";
 import { useNavigate } from "react-router-dom";
-import image from "../../assets/logo.png";
+import image from "../../assets/images/sign-in.png";
 
 export default function SignIn() {
   const navigate = useNavigate();

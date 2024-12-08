@@ -2,7 +2,7 @@ import { Button } from "antd";
 import Form from "antd/es/form/Form";
 import React from "react";
 import OTPInput from "react-otp-input";
-import image from "../../assets/verify.png";
+import image from "../../assets/images/verify.png";
 import PageHeading from "../../components/PageHeading";
 
 export default function VerifyEmail() {

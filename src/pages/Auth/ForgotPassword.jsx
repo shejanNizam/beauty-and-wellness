@@ -1,7 +1,7 @@
 import { Button, Input } from "antd";
 import Form from "antd/es/form/Form";
 import { useNavigate } from "react-router-dom";
-import image from "../../assets/forgot.png";
+import image from "../../assets/images/forgot.png";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();

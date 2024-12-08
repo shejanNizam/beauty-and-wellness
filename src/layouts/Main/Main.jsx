@@ -6,7 +6,7 @@ export default function Main() {
   return (
     <>
       <div className="flex text-start">
-        <div className="">
+        <div>
           <Sidebar />
         </div>
         <div className="flex-1 pl-80">
