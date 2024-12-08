@@ -23,7 +23,7 @@ export default function Notifications() {
   return (
     <>
       <div className="bg-white h-auto]">
-        <div className="sticky top-0 flex justify-start items-center gap-2 bg-primary rounded-t-md h-[80px] text-white text-[32px] font-bold pl-8 z-10">
+        <div className="sticky top-32 flex justify-start items-center gap-2 bg-primary rounded-t-md h-[80px] text-white text-[32px] font-bold pl-8 z-10">
           <IoIosArrowBack />
           <h2>All Notifications</h2>
         </div>
