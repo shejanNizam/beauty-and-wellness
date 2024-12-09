@@ -10,7 +10,7 @@ import { routeLinkGenerators } from "../../utils/routeLinkGenerators";
 const Sidebar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [openNome, setOpenNome] = useState({});
+  const [openName, setOpenName] = useState({});
   const handleLogOut = () => {
     Swal.fire({
       text: "Are you sure you want to logout?",
@@ -46,17 +46,17 @@ const Sidebar = () => {
                   <li key={indx} className="overflow-hidden">
                     <button
                       onClick={() => {
-                        setOpenNome((c) => ({
+                        setOpenName((c) => ({
                           name: c?.name === name ? null : name,
                         }));
                       }}
                       className={cn(
-                        "outline-none hover:text-white text-[20px] hover:bg-primary w-full px-4 py-3 flex items-center justify-between gap-3 text-lg transition-all rounded-lg",
+                        "outline-none hover:text-white hover:bg-primary w-full px-4 py-3 flex items-center justify-between gap-3 text-lg transition-all rounded-sm",
                         {
                           "bg-primary text-white":
-                            name === openNome?.name ||
+                            name === openName?.name ||
                             (location.pathname.includes(rootPath) &&
-                              !openNome.name),
+                              !openName.name),
                         }
                       )}
                     >
@@ -67,9 +67,9 @@ const Sidebar = () => {
                       <MdOutlineArrowRight
                         className={cn("text-gray-500", {
                           "rotate-90 text-white":
-                            name === openNome?.name ||
+                            name === openName?.name ||
                             (location.pathname.includes(rootPath) &&
-                              !openNome.name),
+                              !openName.name),
                         })}
                         size={23}
                       />
@@ -79,9 +79,9 @@ const Sidebar = () => {
                         "pl-8 pr-6 space-y-0.5 h-0 overflow-hidden",
                         {
                           "h-fit pt-1":
-                            name === openNome?.name ||
+                            name === openName?.name ||
                             (location.pathname.includes(rootPath) &&
-                              !openNome.name),
+                              !openName.name),
                         }
                       )}
                     >
@@ -106,7 +106,7 @@ const Sidebar = () => {
                 ) : (
                   <li
                     onClick={() => {
-                      setOpenNome((c) => ({
+                      setOpenName((c) => ({
                         name: c?.name === name ? null : name,
                       }));
                     }}
