@@ -1,13 +1,12 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import NotFound from "../components/NotFound";
-import { dashboardItems } from "../constants/router.constants";
-import Auth from "../layouts/Auth/Auth";
 import Main from "../layouts/Main/Main";
-import ForgotPassword from "../pages/Auth/ForgotPassword";
-import ResetPassword from "../pages/Auth/ResetPassword";
+import Auth from "../layouts/Auth/Auth";
 import SignIn from "../pages/Auth/SignIn";
-import VerifyEmail from "../pages/Auth/VerifyEmail";
 import { routesGenerators } from "../utils/routesGenerators";
+import { dashboardItems } from "../constants/router.constants";
+import ForgotPassword from "../pages/Auth/ForgotPassword";
+import VerifyEmail from "../pages/Auth/VerifyEmail";
+import ResetPassword from "../pages/Auth/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/auth",
-        element: <Navigate to={"/auth/sign-in"} />,
+        element: <Navigate to={"/auth/sign-in"}/>,
       },
       {
         path: "/auth/sign-in",
@@ -32,7 +31,7 @@ const router = createBrowserRouter([
         element: <ForgotPassword />,
       },
       {
-        path: "/auth/verify/:id",
+        path: "/auth/verify-email",
         element: <VerifyEmail />,
       },
       {
@@ -43,7 +42,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <NotFound />,
+    //   element: <NotFound />,
   },
 ]);
 

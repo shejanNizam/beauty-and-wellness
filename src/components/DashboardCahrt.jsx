@@ -1,6 +1,13 @@
 import { DatePicker } from "antd";
-import { CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
-import { Bar, BarChart, Legend } from "recharts";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import LoaderWraperComp from "./LoaderWraperComp";
 
 const data = [
@@ -20,7 +27,7 @@ const data = [
 
 const DashboardChart = () => {
   return (
-    <div className="bg-white rounded-lg px-[24px] py-[15px] text-white drop-shadow-lg h-[560px]">
+    <div className="bg-white rounded-lg px-[24px] py-[15px] text-white drop-shadow-lg h-[580px]">
       <div className="flex justify-between items-center">
         <h4 className="text-[20px] text-primary font-medium">Earnings</h4>
         <DatePicker picker="year" />

@@ -2,22 +2,22 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
-export default function Main() {
+const Main = () => {
   return (
-    <>
-      <div className="flex text-start">
-        <div>
-          <Sidebar />
+    <div className="flex text-start bg-[#FFFBEF] min-h-screen">
+      <div className="">
+        <Sidebar />
+      </div>
+      <div className="flex-1 pl-[326px]">
+        <div className="sticky top-0 w-full p-[24px] z-10 bg-[#FFFBEF]">
+          <Header />
         </div>
-        <div className="flex-1 pl-80">
-          <div className="sticky top-0 w-full p-6 z-10 bg-[#FFFBEF] ">
-            <Header />
-          </div>
-          <div className="p-6 pt-2">
-            <Outlet />
-          </div>
+        <div className="p-[24px] pt-0.5">
+          <Outlet />
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
+
+export default Main;

@@ -1,55 +1,44 @@
 import { Button, DatePicker, Input, Table } from "antd";
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { FiAlertCircle } from "react-icons/fi";
 import { IoSearch } from "react-icons/io5";
-import DashboardModal from "../../../components/DashboardModal";
-import LoaderWraperComp from "../../../components/LoaderWraperComp";
+import idImage from "../../../assets/images/id-card.png";
+import DashboardModal from "../../../Components/DashboardModal";
+import { cn } from "../../../lib/utils";
 
 export default function Client() {
-  const currentPage = 1;
-
-  const searchQuery = {
-    name: "Mr.X",
-    date: "",
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isVerifyModalOpen, setIsVerifyModalOpen] = useState(false);
+  const [modalData, setModalData] = useState({});
+  const showModal = (data) => {
+    setIsModalOpen(true);
+    setModalData(data);
   };
-
-  const userData = [
-    {
-      name: "Mr.X",
-      email: "x@gmail.com",
-      services: "services",
-      value: 15,
-    },
-    {
-      name: "Mr.X",
-      email: "x@gmail.com",
-      services: "services",
-      value: currentPage,
-    },
-    {
-      name: "Mr.X",
-      email: "x@gmail.com",
-      services: "services",
-      value: searchQuery?.date ? searchQuery?.date : "",
-    },
-    {
-      name: "Mr.X",
-      email: "x@gmail.com",
-      services: "services",
-      value: searchQuery?.name ? searchQuery?.name : "",
-    },
-  ];
-
+  const onChange = (date, dateString) => {
+    console.log(date, dateString);
+  };
   const columns = [
     {
       title: "#Tr.ID",
       dataIndex: "key",
       key: "key",
-      render: (_text, _record, index) => (
-        <a>{index + 1 + (currentPage - 1) * 15}</a>
+      render: (text) => (
+        <button
+          onClick={(e) => {
+            navigator.clipboard.writeText(e.target.innerText);
+            toast.success("Copied to clipboard!", {
+              position: "bottom-center",
+            });
+          }}
+          className="outline-none active:text-blue-600 transition-all"
+        >
+          {"454465456" + text}
+        </button>
       ),
     },
     {
-      title: "Client Name",
+      title: "Guest Name",
       dataIndex: "name",
       key: "name",
     },
@@ -59,104 +48,205 @@ export default function Client() {
       key: "email",
     },
     {
-      title: "Taken services",
-      dataIndex: "services",
-      key: "services",
+      title: "Use Service",
+      dataIndex: "useService",
+      key: "useService",
     },
 
     {
       title: "Join Date",
       key: "joinDate",
-      render: (data) => <span>{new Date(data?.createdAt).toDateString()}</span>,
+      dataIndex: "joinDate",
+    },
+    {
+      title: "Verification",
+      key: "verification",
+      render: (data) => (
+        <button
+          onClick={() => {
+            if (data.verification === "Verifiy") setIsVerifyModalOpen(true);
+          }}
+          className={cn(
+            "text-green-playground text-center w-[100px] border border-green-playground rounded-2xl px-2 py-1 text-sm",
+            {
+              "bg-green-playground text-white border-none":
+                data.verification === "Verifiy",
+              "bg-[#f7e6bf] text-red-400 border-none":
+                data.verification === "Rejected",
+            }
+          )}
+        >
+          {data.verification}
+        </button>
+      ),
     },
     {
       title: "Action",
       key: "action",
       render: (data) => (
-        <Button type="text" shape="circle" className="px-0 py-0 text-white">
+        <Button
+          onClick={() => showModal(data)}
+          type="text"
+          shape="circle"
+          className="px-0 py-0 text-green-playground"
+        >
           <FiAlertCircle size={22} />
         </Button>
       ),
     },
   ];
+  const data = [];
+  for (let index = 0; index < 20; index++) {
+    data.push({
+      key: index + 1,
+      name: "John Brown",
+      email: "subro@gmal.com",
+      useService: Math.floor(Math.random() * 99)
+        .toString()
+        .slice(0, 2),
+      phone: "+880 158448484",
+      verification:
+        index % 3 === 0
+          ? "Verifiy"
+          : (index * 11) % 2 === 0
+          ? "Verified"
+          : "Rejected",
+      joinDate: "16 Apr 2024",
+      _id: "12112121" + index,
+    });
+  }
 
   return (
     <>
-      <div className="bg-primary rounded-lg py-[16px]">
+      <div className="bg-white rounded-lg py-[16px]">
+        {/* <div className="w-screen overflow-x-auto"> */}
         <div className="">
           <div className="px-6 pb-5 flex justify-between items-center">
-            <h3 className="text-2xl text-white">{"Client List"}</h3>
+            <h3 className="text-2xl font-sans">{"Guest List"}</h3>
             <div className="flex justify-end gap-x-4">
               <DatePicker
                 placeholder="Date"
                 style={{ width: "150px" }}
-                className="custom-datepicker focus:outline-none border-none rounded-full text-[#222222] px-3.5 text-sm"
+                className="custom-datepicker rounded-full text-[#222222] px-3.5 text-sm"
+                onChange={onChange}
               />
               <Input
-                className="focus:outline-none outline-none border-none rounded-full placeholder:text-[#222222] px-3.5 text-sm w-[170px]"
-                placeholder="Client Name"
+                className="focus:outline-none outline-none rounded-full placeholder:text-[#222222] px-3.5 text-sm w-[170px]"
+                placeholder="User Name"
               />
               <Button
+                className="bg-primary text-white border-none"
+                type="primary"
                 shape="circle"
                 icon={<IoSearch className="" />}
-                className="bg-primary text-white border-none"
               />
             </div>
           </div>
-          <LoaderWraperComp>
-            <Table
-              columns={columns}
-              dataSource={userData?.map((data, index) => ({
-                ...data,
-                key: index,
-              }))}
-              pagination={{
-                position: ["bottomCenter"],
-                showQuickJumper: true,
-                showSizeChanger: false,
-                defaultCurrent: 1,
-                pageSize: 15,
-              }}
-            />
-          </LoaderWraperComp>
+          <Table
+            columns={columns}
+            dataSource={data}
+            pagination={{
+              position: ["bottomCenter"],
+              showQuickJumper: true,
+            }}
+          />
         </div>
-        <DashboardModal>
-          <div className="flex flex-col justify-between text-white">
-            <h6 className="font-medium text-center text-lg pt-[18px]">
-              User Deta ils
+        {/* verify modal */}
+        <DashboardModal
+          setIsModalOpen={setIsVerifyModalOpen}
+          isModalOpen={isVerifyModalOpen}
+          maxWidth={"400px"}
+        >
+          <div className="flex flex-col justify-between text-hash font-sans">
+            <h6 className="font-medium text-center text-2xl py-[18px]">
+              Verify Details
             </h6>
-            <div className="space-y-[18px] text-sm pb-2 divide-y divide-blue-400">
-              <div className="flex justify-between pt-[18px]">
-                <p>User Name</p>
-                <p className="font-medium">{"modalData.name"}</p>
+            <div className="space-y-[18px]">
+              <div>
+                <img
+                  src={idImage}
+                  alt=""
+                  className="rounded-md max-h-40 mx-auto"
+                />
               </div>
-              <div className="flex justify-between pt-[18px]">
-                <p>Email</p>
-                <p className="font-medium">{"modalData.email"}</p>
-              </div>
-              <div className="flex justify-between pt-[18px]">
-                <p>Phone Number</p>
-                <p className="font-medium">{"modalData.phone" || "N/A"}</p>
-              </div>
-              <div className="flex justify-between pt-[18px]">
-                <p>Address</p>
-                <p className="font-medium">{"Dhaka, Bangladesh"}</p>
-              </div>
-              <div className="flex justify-between pt-[18px]">
-                <p>Joining Date</p>
-                <p className="font-medium">
-                  {new Date("modalData?.createdAt").toDateString()}
-                </p>
+              <div>
+                <img
+                  src={idImage}
+                  alt=""
+                  className="rounded-md max-h-40 mx-auto"
+                />
               </div>
             </div>
-            <div className="flex justify-center py-[40px] ">
+            <div className="flex justify-center py-4 px-6 gap-x-6 mt-4">
               <Button
-                onClick={() => setIsModalOpen(false)}
+                onClick={() => setIsVerifyModalOpen(false)}
+                style={{
+                  background: "#EE1D13",
+                }}
                 size="middle"
                 type="primary"
-                className="w-44 rounded-xl"
+                className="w-44 rounded-lg "
+              >
+                Cancel
+              </Button>
+              <Button size="middle" type="primary" className="w-44 rounded-lg ">
+                Verify
+              </Button>
+            </div>
+          </div>
+        </DashboardModal>
+        {/* details modal */}
+        <DashboardModal
+          setIsModalOpen={setIsModalOpen}
+          isModalOpen={isModalOpen}
+          maxWidth={"800px"}
+        >
+          <div className="flex flex-col justify-between text-hash font-sans">
+            <h6 className="font-medium text-center text-2xl pt-[18px]">
+              Guest Details
+            </h6>
+            <div className="space-y-[18px] divide-y divide-gray-100 border-b border-gray-100 pb-5 px-2">
+              <div className="flex justify-between pt-[18px]">
+                <p>Guest ID :</p>
+                <p className="">#{modalData.id}45456</p>
+              </div>
+              <div className="flex justify-between pt-[18px]">
+                <p>Guest Name :</p>
+                <p className="">{modalData.name}</p>
+              </div>
+              <div className="flex justify-between pt-[18px]">
+                <p>Email :</p>
+                <p className="">{modalData.email}</p>
+              </div>
+              <div className="flex justify-between pt-[18px]">
+                <p>Total Use Service :</p>
+                <p className="">9</p>
+              </div>
+              <div className="flex justify-between pt-[18px]">
+                <p>Joining Date :</p>
+                <p className="">{modalData.joinDate}</p>
+              </div>
+            </div>
+            <div className="flex justify-center py-6 px-11 gap-x-6 mt-6">
+              <Button
+                style={{
+                  background: "#3A7D99",
+                }}
+                size="middle"
+                type="primary"
+                className="w-44 rounded-lg "
               >
                 Okay
+              </Button>
+              <Button
+                style={{
+                  background: "#EE1D23",
+                }}
+                size="middle"
+                type="primary"
+                className="w-44 rounded-lg "
+              >
+                Block
               </Button>
             </div>
           </div>

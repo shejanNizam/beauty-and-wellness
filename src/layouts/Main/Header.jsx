@@ -1,7 +1,7 @@
 import { Badge } from "antd";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import USER_IMG from "../../assets/images/dashboard-profile.png";
+import USER_IMG from "../../assets/images/services/frame1.png";
 
 export default function Header() {
   const navigate = useNavigate();

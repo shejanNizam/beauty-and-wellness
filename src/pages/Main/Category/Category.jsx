@@ -1,8 +1,9 @@
+import { Button } from "antd";
 import { IoIosArrowBack } from "react-icons/io";
-import image1 from "../../../assets/services/frame1.png";
-import image2 from "../../../assets/services/frame2.png";
-import image3 from "../../../assets/services/frame3.png";
-import image4 from "../../../assets/services/frame4.png";
+import image1 from "../../../assets/images/services/frame1.png";
+import image2 from "../../../assets/images/services/frame2.png";
+import image3 from "../../../assets/images/services/frame3.png";
+import image4 from "../../../assets/images/services/frame4.png";
 
 export default function Category() {
   const data = [
@@ -35,10 +36,13 @@ export default function Category() {
           <IoIosArrowBack />
           <h2>Category</h2>
         </div>
+        <div className="flex justify-end m-6">
+          <Button className=" bg-primary text-white"> Add Category </Button>
+        </div>
 
-        <div className="ml-6 grid grid-cols-4 gap-2 pt-12">
+        <div className="ml-6 flex justify-center items-center gap-16 pt-8">
           {data?.map((d) => (
-            <div key={d.id} className="rounded-md">
+            <div key={d.id}>
               <img src={d.image} alt="#" />
               <p className="text-2xl "> {d.name} </p>
             </div>

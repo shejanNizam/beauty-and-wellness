@@ -5,9 +5,13 @@ export default {
     extend: {
       colors: {
         primary: "#142F62",
-        playground: "#758DFF",
+        hash: "#142F62",
+        info: "#142F62",
+        playground: "#E8BD56",
+        "light-gray": "#E7F8FF",
+        "green-playground": "#00C38A",
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [],
 };
