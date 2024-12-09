@@ -1,9 +1,9 @@
 import { Badge, Button } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 import { IoIosNotificationsOutline } from "react-icons/io";
+import { IoNotificationsOutline } from "react-icons/io5";
 import { useLocation, useNavigate } from "react-router-dom";
 import USER_IMG from "../../assets/images/services/frame1.png";
-import { IoNotificationsOutline } from "react-icons/io5";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ const Header = () => {
   }, [loacatin.pathname]);
 
   return (
-    <div className="w-full h-[88px] flex justify-between items-center rounded-2xl py-[16px] px-[32px] bg-primary shadow-sm relative">
+    <div className="w-full h-[88px] flex justify-between items-center rounded-2xl py-[16px] px-[32px] bg-[#627496] shadow-sm relative">
       <div className="text-start space-y-0.5">
         <p className="text-[24px] font-medium text-white">
           {"Welcome,"} {"Jeklin"}
