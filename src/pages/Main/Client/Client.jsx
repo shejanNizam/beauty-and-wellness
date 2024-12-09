@@ -31,14 +31,14 @@ export default function Client() {
               position: "bottom-center",
             });
           }}
-          className="outline-none active:text-blue-600 transition-all"
+          className="outline-none active:text-primary transition-all"
         >
-          {"454465456" + text}
+          {"12345678" + text}
         </button>
       ),
     },
     {
-      title: "Guest Name",
+      title: "Client Name",
       dataIndex: "name",
       key: "name",
     },
@@ -48,7 +48,7 @@ export default function Client() {
       key: "email",
     },
     {
-      title: "Use Service",
+      title: "Taken Services",
       dataIndex: "useService",
       key: "useService",
     },
@@ -57,28 +57,6 @@ export default function Client() {
       title: "Join Date",
       key: "joinDate",
       dataIndex: "joinDate",
-    },
-    {
-      title: "Verification",
-      key: "verification",
-      render: (data) => (
-        <button
-          onClick={() => {
-            if (data.verification === "Verifiy") setIsVerifyModalOpen(true);
-          }}
-          className={cn(
-            "text-green-playground text-center w-[100px] border border-green-playground rounded-2xl px-2 py-1 text-sm",
-            {
-              "bg-green-playground text-white border-none":
-                data.verification === "Verifiy",
-              "bg-[#f7e6bf] text-red-400 border-none":
-                data.verification === "Rejected",
-            }
-          )}
-        >
-          {data.verification}
-        </button>
-      ),
     },
     {
       title: "Action",
@@ -99,20 +77,14 @@ export default function Client() {
   for (let index = 0; index < 20; index++) {
     data.push({
       key: index + 1,
-      name: "John Brown",
-      email: "subro@gmal.com",
+      name: "Henry",
+      email: "email@gmail.com",
       useService: Math.floor(Math.random() * 99)
         .toString()
         .slice(0, 2),
       phone: "+880 158448484",
-      verification:
-        index % 3 === 0
-          ? "Verifiy"
-          : (index * 11) % 2 === 0
-          ? "Verified"
-          : "Rejected",
-      joinDate: "16 Apr 2024",
-      _id: "12112121" + index,
+      joinDate: "29 July 2024",
+      _id: "12121" + index,
     });
   }
 
@@ -122,7 +94,7 @@ export default function Client() {
         {/* <div className="w-screen overflow-x-auto"> */}
         <div className="">
           <div className="px-6 pb-5 flex justify-between items-center">
-            <h3 className="text-2xl font-sans">{"Guest List"}</h3>
+            <h3 className="text-2xl font-sans">{"Client List"}</h3>
             <div className="flex justify-end gap-x-4">
               <DatePicker
                 placeholder="Date"
@@ -203,15 +175,15 @@ export default function Client() {
         >
           <div className="flex flex-col justify-between text-hash font-sans">
             <h6 className="font-medium text-center text-2xl pt-[18px]">
-              Guest Details
+              Client Details
             </h6>
             <div className="space-y-[18px] divide-y divide-gray-100 border-b border-gray-100 pb-5 px-2">
               <div className="flex justify-between pt-[18px]">
-                <p>Guest ID :</p>
+                <p>Client ID :</p>
                 <p className="">#{modalData.id}45456</p>
               </div>
               <div className="flex justify-between pt-[18px]">
-                <p>Guest Name :</p>
+                <p>Client Name :</p>
                 <p className="">{modalData.name}</p>
               </div>
               <div className="flex justify-between pt-[18px]">
@@ -230,13 +202,13 @@ export default function Client() {
             <div className="flex justify-center py-6 px-11 gap-x-6 mt-6">
               <Button
                 style={{
-                  background: "#3A7D99",
+                  background: "#008E3B",
                 }}
                 size="middle"
                 type="primary"
                 className="w-44 rounded-lg "
               >
-                Okay
+                Ok
               </Button>
               <Button
                 style={{
