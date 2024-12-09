@@ -1,11 +1,11 @@
-import { Button, Checkbox, Input } from "antd";
+import { Button } from "antd";
 import Form from "antd/es/form/Form";
 import React, { useState } from "react";
+import OTPInput from "react-otp-input";
 import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 import image from "../../assets/images/verify.png";
 import PageHeading from "../../Components/PageHeading";
-import OTPInput from "react-otp-input";
-import Swal from "sweetalert2";
 // import { useVerifyEmailMutation } from "../../redux/features/Auth/authApi";
 
 const VerifyEmail = () => {
@@ -50,8 +50,8 @@ const VerifyEmail = () => {
     // }
   };
   return (
-    <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8">
-      <div className="lg:border-r-2 border-primary mx-auto w-[90%] lg:p-[8%]">
+    <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8 bg-white ">
+      <div className="lg:border-r-2 border-gray mx-auto w-[90%] lg:p-[8%]">
         <img src={image} alt="" />
       </div>
       <div className="lg:p-[5%] order-first lg:order-last">
@@ -59,10 +59,10 @@ const VerifyEmail = () => {
           <div className="flex flex-col items-center lg:items-start">
             <PageHeading
               backPath={"/auth/forgot-password"}
-              title={"Verify Email"}
+              title={"Verify OTP"}
               disbaledBackBtn={true}
             />
-            <p className=" drop-shadow text-hash mt-5 text-center lg:text-left">
+            <p className=" drop-shadow text-[#646464] mt-5 text-center lg:text-left">
               Please check your email. We have sent a code to contact @gmail.com
             </p>
           </div>
@@ -84,26 +84,26 @@ const VerifyEmail = () => {
                   width: "70px",
                   margin: "20px",
                   // background: "#ECE8F1",
-                  border: "1px solid #61D0FF",
+                  border: "1px solid #142F62",
                   // marginRight: "auto",
                   outline: "none",
                   borderRadius: "16px",
-                  color: "black",
+                  // color: "black",
                 }}
                 renderSeparator={<span> </span>}
                 renderInput={(props) => <input {...props} />}
               />
             </div>
             <div className="w-full flex justify-center pt-5">
-                <Button
-                  // disabled={isLoading}
-                  type="primary"
-                  size="large"
-                  htmlType="submit"
-                  className="w-full px-2 "
-                >
-                  Verify Email
-                </Button>
+              <Button
+                // disabled={isLoading}
+                type="primary"
+                size="large"
+                htmlType="submit"
+                className="w-full px-2 "
+              >
+                Verify
+              </Button>
             </div>
           </Form>
         </div>

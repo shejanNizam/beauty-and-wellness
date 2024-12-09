@@ -1,7 +1,7 @@
 import { Button, Checkbox, Input } from "antd";
 import Form from "antd/es/form/Form";
 import { useLocation, useNavigate } from "react-router-dom";
-import logo_image from "../../assets/images/main_logo.png";
+import logo_image from "../../assets/images/logo_sign_in.png";
 // import { useDispatch } from "react-redux";
 // import { usePostLoginMutation } from "../../redux/features/Auth/authApi";
 // import { setUser } from "../../redux/features/Auth/authSlice";
