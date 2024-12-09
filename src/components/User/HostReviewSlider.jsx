@@ -21,14 +21,13 @@ const HostReviewSlider = ({}) => {
         delay: 3000, // Time between slides (in ms)
         disableOnInteraction: false, // Keeps autoplay running even after interaction
       }}
-
       modules={[Pagination, Autoplay]}
       speed={4000}
       className=""
     >
       {["", "", "", "", "", "", "", "", "", ""].map((_item, index) => (
         <SwiperSlide key={index}>
-          <div className="rounded-xl border border-blue-300 px-6 py-4 bg-blue-50 space-y-3">
+          <div className="rounded-xl border border-primary px-6 py-4 bg-[#F7F3EA] space-y-3">
             <div className="flex justify-setart items-center gap-2">
               <img
                 src={userImg}

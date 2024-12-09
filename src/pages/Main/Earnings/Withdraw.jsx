@@ -1,11 +1,9 @@
-import React, { useState } from "react";
 import { Button, DatePicker, Input, Table } from "antd";
-import { FiAlertCircle } from "react-icons/fi";
-import DashboardModal from "../../../Components/DashboardModal";
-import { IoSearch } from "react-icons/io5";
-import { cn } from "../../../lib/utils";
-import idImage from "../../../assets/images/id-card.png";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import { IoSearch } from "react-icons/io5";
+import DashboardModal from "../../../Components/DashboardModal";
+import { cn } from "../../../lib/utils";
 
 const Withdraw = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,21 +35,21 @@ const Withdraw = () => {
       ),
     },
     {
-      title: "Host Name",
+      title: "Salon Name",
       dataIndex: "name",
       key: "name",
+    },
+    {
+      title: "Account Number",
+      dataIndex: "account",
+      key: "account",
+      render: (text) => <span className="pl-4">{text}</span>,
     },
     {
       title: "Amount",
       dataIndex: "amount",
       key: "amount",
       render: (text) => <span>{text}$</span>,
-    },
-    {
-      title: "Your Per(%)",
-      dataIndex: "perPercent",
-      key: "perPercent",
-      render: (text) => <span className="pl-4">{text}</span>,
     },
 
     {
@@ -80,19 +78,17 @@ const Withdraw = () => {
   for (let index = 0; index < 20; index++) {
     data.push({
       key: index + 1,
-      name: "John Brown",
-      amount: 2000,
+      name: "Josef Endrik",
+      amount: 1000,
       payment: 900,
-      perPercent: Math.floor(Math.random() * 99)
-        .toString()
-        .slice(0, 2),
+      account: "39*****56775",
       phone: "+880 158448484",
       paymentRequest: (index * 11) % 2 === 0 ? "Pending" : "Accepted",
       joinDate: "16 Apr 2024",
       _id: "12112121" + index,
     });
   }
-  console.log(modalData)
+  console.log(modalData);
   return (
     <div className="bg-white rounded-lg py-[16px]">
       {/* <div className="w-screen overflow-x-auto"> */}
@@ -134,7 +130,7 @@ const Withdraw = () => {
       >
         <div className="flex flex-col justify-between text-hash font-sans">
           <h6 className="font-sans text-center text-2xl pt-[15px]">
-          Withdraw Request Details
+            Withdraw Request Details
           </h6>
           <div className="space-y-[18px] divide-y divide-gray-100 border-b border-gray-100 pb-5 px-2">
             <div className="flex justify-between pt-[18px]">
