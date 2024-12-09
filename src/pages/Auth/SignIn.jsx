@@ -1,7 +1,7 @@
 import { Button, Checkbox, Input } from "antd";
 import Form from "antd/es/form/Form";
 import { useLocation, useNavigate } from "react-router-dom";
-import image from "../../assets/images/main_logo.png";
+import logo_image from "../../assets/images/main_logo.png";
 // import { useDispatch } from "react-redux";
 // import { usePostLoginMutation } from "../../redux/features/Auth/authApi";
 // import { setUser } from "../../redux/features/Auth/authSlice";
@@ -54,9 +54,9 @@ const SignIn = () => {
     // }
   };
   return (
-    <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8">
-      <div className="lg:border-r-2 border-primary mx-auto w-[92%] lg:p-[15%] lg:pr-[20%] ">
-        <img src={image} alt="" />
+    <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8 bg-white">
+      <div className="lg:border-r-2 border-gray mx-auto w-[70%] lg:p-[25%] lg:pr-[25%] ">
+        <img src={logo_image} alt="logo_image" />
       </div>
       <div className="lg:p-[5%] order-first lg:order-last">
         <div className="w-full py-[44px] lg:px-[44px]">
@@ -65,7 +65,7 @@ const SignIn = () => {
               Login to Account!
             </h1>
             <p className="text-hash text-center lg:text-lg">
-              Please enter your email and password to continue.
+              Please enter your email and password to continue!
             </p>
           </div>
           <Form
