@@ -36,15 +36,19 @@ const ForgotPassword = () => {
     // }
   };
   return (
-    <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8">
-      <div className="border-r-0 lg:border-r-2 border-primary w-[99%] p-[8%] lg:p-[12%] lg:pr-0">
+    <div className="min-h-[92vh] w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-1 lg:gap-8 bg-white">
+      <div className="border-r-0 lg:border-r-2 border-gray w-[99%] p-[8%] lg:p-[12%] lg:pr-0">
         <img src={image} alt="" />
       </div>
       <div className="lg:p-[5%] order-first lg:order-last">
         <div className="w-full py-[64px] lg:px-[44px] space-y-8">
           <div className="flex flex-col items-center lg:items-start">
-            <PageHeading backPath={"/auth"} title={"Forgot Password"} disbaledBackBtn={true} />
-            <p className="drop-shadow text-hash mt-4 text-center lg:text-start">
+            <PageHeading
+              backPath={"/auth"}
+              title={"Forget Password"}
+              disbaledBackBtn={true}
+            />
+            <p className="drop-shadow text-[#646464] mt-4 text-center lg:text-start">
               Enter your email address to get a verification code for resetting
               your password. Please enter your email address to reset your
               password.
@@ -67,22 +71,22 @@ const ForgotPassword = () => {
                 },
                 {
                   required: true,
-                  message: "Please input your email!",
+                  message: "Email is Required",
                 },
               ]}
             >
               <Input size="large" placeholder="Enter your email" />
             </Form.Item>
             <div className="w-full flex justify-center pt-5">
-                <Button
-                  // disabled={isLoading}
-                  type="primary"
-                  size="large"
-                  htmlType="submit"
-                  className="w-full px-2 "
-                >
-                  Get OTP
-                </Button>
+              <Button
+                // disabled={isLoading}
+                type="primary"
+                size="large"
+                htmlType="submit"
+                className="w-full px-2 "
+              >
+                Get OTP
+              </Button>
             </div>
           </Form>
         </div>
