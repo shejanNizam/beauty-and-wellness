@@ -12,13 +12,13 @@ import {
 } from "react-icons/md";
 import { PiHandWithdrawBold } from "react-icons/pi";
 import { RiDashboardHorizontalFill } from "react-icons/ri";
+import Beautician from "../pages/Main/Beautician/Beautician";
+import BeauticianDetails from "../pages/Main/Beautician/BeauticianDetails";
 import Category from "../pages/Main/Category/Category";
 import Client from "../pages/Main/Client/Client";
 import DashboardHome from "../pages/Main/DashboardHome/DashboardHome";
 import Earnings from "../pages/Main/Earnings/Earnings";
 import Withdraw from "../pages/Main/Earnings/Withdraw";
-import HostDetails from "../pages/Main/Host/HostDetails";
-import Hosts from "../pages/Main/Host/Hosts";
 import Notifications from "../pages/Main/Notifications/Notifications";
 import EditMyProfile from "../pages/Profile/EditMyProfile";
 import MyProfile from "../pages/Profile/MyProfile";
@@ -50,13 +50,13 @@ export const dashboardItems = [
   },
   {
     name: "Beautician",
-    path: "hosts",
+    path: "beautician",
     icon: MdOutlineAdminPanelSettings,
-    element: <Hosts />,
+    element: <Beautician />,
   },
   {
-    path: "/hosts/:id",
-    element: <HostDetails />,
+    path: "/beautician/:id",
+    element: <BeauticianDetails />,
   },
   {
     name: "Earnings",

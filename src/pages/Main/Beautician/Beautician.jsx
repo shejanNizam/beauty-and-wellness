@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import { Alert, Button, DatePicker, Input, Table } from "antd";
-import { FiAlertCircle } from "react-icons/fi";
-import DashboardModal from "../../../Components/DashboardModal";
-import { IoSearch } from "react-icons/io5";
-import { cn } from "../../../lib/utils";
-import idImage from "../../../assets/images/id-card.png";
-import { useNavigate } from "react-router-dom";
+import { Button, DatePicker, Input, Table } from "antd";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import { IoSearch } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import idImage from "../../../assets/images/id-card.png";
+import DashboardModal from "../../../Components/DashboardModal";
+import { cn } from "../../../lib/utils";
 
-const Hosts = () => {
+export default function Beautician() {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState({});
@@ -35,9 +34,9 @@ const Hosts = () => {
               position: "bottom-center",
             });
           }}
-          className="outline-none active:text-blue-600 transition-all"
+          className="outline-none active:text-primary transition-all"
         >
-          {"454465456" + text}
+          {"12345678" + text}
         </button>
       ),
     },
@@ -52,9 +51,9 @@ const Hosts = () => {
       key: "email",
     },
     {
-      title: "Give Service",
-      dataIndex: "useService",
-      key: "useService",
+      title: "Completed services",
+      dataIndex: "completedService",
+      key: "completedService",
     },
 
     {
@@ -62,28 +61,7 @@ const Hosts = () => {
       key: "joinDate",
       dataIndex: "joinDate",
     },
-    {
-      title: "Verification",
-      key: "verification",
-      render: (data) => (
-        <button
-          onClick={() => {
-            if (data.verification === "Verifiy") setIsVerifyModalOpen(true);
-          }}
-          className={cn(
-            "text-green-playground text-center w-[100px] border border-green-playground rounded-2xl px-2 py-1 text-sm",
-            {
-              "bg-green-playground text-white border-none":
-                data.verification === "Verifiy",
-              "bg-[#f7e6bf] text-red-400 border-none":
-                data.verification === "Rejected",
-            }
-          )}
-        >
-          {data.verification}
-        </button>
-      ),
-    },
+
     {
       title: "Details",
       key: "details",
@@ -104,20 +82,14 @@ const Hosts = () => {
   for (let index = 0; index < 20; index++) {
     data.push({
       key: index + 1,
-      name: "John Brown",
-      email: "subro@gmal.com",
-      useService: Math.floor(Math.random() * 99)
+      name: "Henry",
+      email: "email@gmail.com",
+      completedService: Math.floor(Math.random() * 99)
         .toString()
         .slice(0, 2),
       phone: "+880 158448484",
-      verification:
-        index % 3 === 0
-          ? "Verifiy"
-          : (index * 11) % 2 === 0
-          ? "Verified"
-          : "Rejected",
-      joinDate: "16 Apr 2024",
-      _id: "12112121" + index,
+      joinDate: "29 July 2024",
+      _id: "12121" + index,
     });
   }
   return (
@@ -125,7 +97,7 @@ const Hosts = () => {
       {/* <div className="w-screen overflow-x-auto"> */}
       <div className="">
         <div className="px-6 pb-5 flex justify-between items-center">
-          <h3 className="text-2xl font-sans">{"Host List"}</h3>
+          <h3 className="text-2xl font-sans">{"Beautician List"}</h3>
           <div className="flex justify-end gap-x-4">
             <DatePicker
               placeholder="Date"
@@ -283,6 +255,4 @@ const Hosts = () => {
       </DashboardModal>
     </div>
   );
-};
-
-export default Hosts;
+}

@@ -1,20 +1,20 @@
 import { Button } from "antd";
 import React from "react";
-import { BsStarFill, BsStarHalf } from "react-icons/bs";
+import { BsStarFill } from "react-icons/bs";
 import { FaChevronLeft } from "react-icons/fa";
+import { FcClock } from "react-icons/fc";
+import { IoMdRadioButtonOn } from "react-icons/io";
 import Rating from "react-rating";
 import { useNavigate } from "react-router-dom";
-import hostImage from "../../../assets/images/host-details-image.png";
-import { IoMdRadioButtonOn } from "react-icons/io";
-import { FcClock } from "react-icons/fc";
-import HostReviewSlider from "../../../Components/User/HostReviewSlider";
 import Swal from "sweetalert2";
+import hostImage from "../../../assets/images/host-details-image.png";
+import HostReviewSlider from "../../../Components/User/HostReviewSlider";
 
-const HostDetails = () => {
+export default function BeauticianDetails() {
   const navigate = useNavigate();
   const handleBlock = () => {
     Swal.fire({
-      title:"Block Host !!",
+      title: "Block Host !!",
       text: "Are you sure you want to block this host?",
       showCancelButton: true,
       confirmButtonText: "     Block    ",
@@ -110,7 +110,7 @@ const HostDetails = () => {
               </div>
               <div
                 className="flex justify-between items-center gap-2
-              "
+                "
               >
                 <p className="flex items-center gap-1.5">
                   <IoMdRadioButtonOn className="text-[#1B7443]" size={20} />{" "}
@@ -143,7 +143,7 @@ const HostDetails = () => {
           Okay
         </Button>
         <Button
-        onClick={handleBlock}
+          onClick={handleBlock}
           style={{
             background: "#EE1D23",
           }}
@@ -156,6 +156,4 @@ const HostDetails = () => {
       </div>
     </div>
   );
-};
-
-export default HostDetails;
+}
