@@ -45,8 +45,8 @@ const DashboardChart = () => {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
-            tick={{ stroke: "#142F62", strokeWidth: 0.5, fill: "#142F62" }}
-            style={{ fontWeight: "350", color: "#FFFFFF" }}
+            tick={{ stroke: "#464343", strokeWidth: 0.5, fill: "#142F62" }}
+            style={{ fontWeight: "400", color: "#FFFFFF" }}
             dataKey="month"
           />
           <YAxis />
